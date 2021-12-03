@@ -1,0 +1,24 @@
+QtXlsx 是一个在Qt框架下使用的三方库. 可以很方便的对Excel文档进行读写等操作.且是跨平台的.
+---编译环境------
+
+Windows10 x64
+
+VS2019
+
+Qt 5.15.2 msvc2019 x64
+
+--------------------
+步骤：
+1. 下载源码 git clone git@github.com:dbzhang800/QtXlsxWriter.git QtXlsxWriter_x64
+2. 下载Perl(Strawberry或activeperl均可), 其bin目录路径加入环境变量Path中
+3、打开x64 Native Tools Command Prompt for VS 2019
+4、进入源码目录
+5、qmake (得到Makefile)
+6、nmake（这一步就得到了所需要的所有.h  .lib .dll 文件. xlsxzipreader.cpp这儿可能会报错. 根据提示, 添加头文件QVector, 且将51行对象类型改为auto）
+7、nmake install （这一步将会把编译生成的相应文件复制到 Qt相关目录下. 可选.）
+8、将Qt相关目录下文件拷贝到自定义的文件夹内，如
+C:\Qt\5.15.2\msvc2019_64\include\QtXlsx  复制到 D:\Qtxlsx\include\QtXlsx  
+C:\Qt\5.15.2\msvc2019_64\bin Qt5Xlsxd.dll Qt5Xlsx.dll 复制到 D:\Qtxlsx\bin 
+C:\Qt\5.15.2\msvc2019_64\lib Qt5Xlsxd.lib Qt5Xlsx.lib 复制到 D:\Qtxlsx\lib
+ 
+
